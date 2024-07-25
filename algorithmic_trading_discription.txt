@@ -1,0 +1,43 @@
+Algorithmic Trading Project:
+
+In this project I will create a model which uses the rules of trading to make trading decisions. The language being used is python. Since the system I are working on is low complexity I can use python for this system. Many companies use more complex systems and python code is slow. Therefore python is usually used as a glue language to trigger code that runs in more faster languages such as c++ or java. Numpy is a prime example of this approach. While the interface and many utility functions are written in Python, the core operations that require high performance, such as array manipulation and mathematical computations, are implemented in C. This allows Numpy to provide the ease of use of Python with the performance of C. 
+
+Machine Learning use case in trading:
+Supervised Learning:
+1. Signal generation of when to buy and sell stocks through prediction (returns/direction).
+2. Risk management through prediction. For example, determining the position sizing and stop-loss levels to have more optimized risk.
+Unsupervised learning trading strategy:
+1. Extract insight from the data. For example discover patterns, relationship, and structures. 
+
+The difficulties of implementing machine learning in trading:
+1. Once the model detects the pattern and buys and sells for a period of time using this pattern eventually individuals or other businesses can recognize the same predicted and follow it making it not viable.
+2. Very difficult to perdict returns and future prices of shares
+3. It is hard to predict economic indicators unless you have access to huge datasets on different organizations payroll and employment and other non finacial statistics. 
+4. Another problem is overfitting when the model understands the training model too well that it inaccurately predicts/fails in the test data.
+
+This project is purely for only research purposes and should not be used for financial advise. 
+
+In this project I will use unsupervised learning to train our model so it will be used to extract insights on data without predefined target variable unlike (supervised learning).
+
+How I will apply unsupervised learning:
+1. Clustering 
+2. Dimensionality reduction 
+3. Anomoly detection
+4. Market Regime Detection 
+5. Portfolio Optimization
+
+Process:
+
+1. Download S&P 500 stock prices data.
+2. Calculate different techincal indicators and features for each work 
+3. Aggregate on monthly level and filter for each month by top 100 stocks
+4. Calculate monthly returns for different time horizons to add to features.
+5. Download Fama-French factors and caluclate the rolling factor betas for each stock 
+6. For each month fit a K-mean clustering model to group similar assets based on their features.
+7. For each month select assets based on the cluster and from a portfolio based on Efficient Fronteir max sharpe ratio protfolio optimization. The weights within the stock portoflio will be optimized using Efficient Fronteir max sharpe ratio with rebalancing at the end of every month. 
+8. Visualize the portfolio returns and compare it with the S&P 500 returns.
+
+There is a small limitation in our dataset since we will be using the most recent S&P 500 stocks list therefore there might be a survivorship bias. To mitgate this bais I would have to gather historic S&P 500 from a data vendor such as Bloomberg, CRSP, or FactSet which are paid services and other unpaid site might not have reliable data. Since this project is a proof of concept and is not used for real financial advise we won't be using historic and would deal with a small survivorship bias.
+
+
+
